@@ -4,7 +4,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const session = require("express-session");
 const path = require("path");
-const PORT = process.env.PORT || 2550;
+const PORT = process.env.PORT || 2551;
 
 require("dotenv/config");
 mongoose.set("useCreateIndex", true);
@@ -25,13 +25,13 @@ server.use(express.static(path.join(__dirname, "build")));
 
 //Routes
 server.use("/api/v1/users", require("./routes/users.routes"));
-server.use("/api/v1/stores", require("./routes/malls.routes"));
-server.use("/api/v1/itemss", require("./routes/stores.routes"));
-server.use("/api/v1/orders", require("./routes/bookings.routes"));
+server.use("/api/v1/stores", require("./routes/stores.routes"));
+server.use("/api/v1/items", require("./routes/items.routes"));
+server.use("/api/v1/orders", require("./routes/orders.routes"));
 server.use("/admin", require("./routes/admin.routes"));
-server.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
-});
+// server.get("/*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "build", "index.html"));
+// });
 
 server.listen(PORT, () => {
   console.log("server is running");

@@ -21,11 +21,11 @@ const userSchema = new Schema(
     coordinates: {
       lat: {
         type: String,
-        required: true
+        
       },
       long: {
         type: String,
-        required: true
+        
       }
     },
     image: {
@@ -44,7 +44,6 @@ const userSchema = new Schema(
     },
     phone: {
       type: String,
-      required: true,
       unique: true
     },
     password: {

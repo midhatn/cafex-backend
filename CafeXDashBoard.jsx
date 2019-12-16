@@ -25,7 +25,7 @@ export default class ViralDashBoard extends Component {
         </div>
         <div style={card}>
           <img
-            src="https://avatars1.githubusercontent.com/u/35053211?s=460&v=4"
+            src=""
             alt=""
           />
           <a href="https://github.com/midhatn">
@@ -34,19 +34,14 @@ export default class ViralDashBoard extends Component {
         </div>
         <div style={card}>
           <img
-            src="https://avatars0.githubusercontent.com/u/24430074?s=460&v=4"
+            src=""
             alt=""
           />
-          <a href="https://github.com/HishamBS">
+          <a href="https://github.com/Anas10895">
             <h1>Anas</h1>
           </a>
         </div>
-        <div style={{ height: "200px", width: "300px", margin: "0 auto" }}>
-          <img
-            src="https://drive.google.com/uc?id=1cet9VR9euTe1TjQWzVySTQhKDqdaleaI"
-            alt=""
-          />
-        </div>
+        
       </div>
     );
   }

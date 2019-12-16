@@ -16,6 +16,9 @@ const itemSchema = new Schema(
     },
     item_image: {
       type: String
+    },
+    item_available: {
+      type: Boolean
     }
   },
   { timestamps: true }

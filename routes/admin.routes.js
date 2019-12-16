@@ -15,7 +15,7 @@ const adminBro = new AdminBro({
   rootPath: "/admin",
   branding: {
     theme,
-    logo: "https://github.com/midhatn/cafex-backend/blob/master/logo.png",
+    logo: "https://raw.githubusercontent.com/midhatn/cafex-backend/master/logo.png",
     companyName: "CafeX"
   },
   dashboard: {
