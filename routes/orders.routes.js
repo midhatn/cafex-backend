@@ -6,14 +6,24 @@ const Order = require("../models/Order");
 
 
 //new order by user
+
+router.post("/neworder", async (req, res) => {
+  try {
+    let order = new Order(req.body);
+    let savedOrder = await order.save();
+    res.json({ msg: "added", order: savedOrder });
+  } catch (error) {
+    res.json({ msg: error});
+  }
+});
 //get order by id 
 router.get("/:id", (req, res) => {
-    Store.findById(req.params.id)
-      .then(store => {
-        res.json(store);
+    Order.findById(req.params.id)
+      .then(order => {
+        res.json(order);
       })
       .catch(err => {
-        res.json({ msg: "store doesn't exist", err: err });
+        res.json({ msg: "order doesn't exist", err: err });
       });
   });
 //update order by user 
@@ -27,6 +37,11 @@ router.get("/", async (req, res) => {
       res.json({ msg: error});
     }
   });
+
+
+
+
+  
 
 
 module.exports = router;

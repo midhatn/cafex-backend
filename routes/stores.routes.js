@@ -69,7 +69,6 @@ router.put("/:store_id", (req, res) => {
 });
 //add an item inside the store
 router.put("/:id/items/newitem", async (req, res) => {
-  // console.log(req.body);
   Store.findById(req.params.id).then(store => {
     let item = new Item(req.body);
     store.store_items.push(item._id);
@@ -79,6 +78,7 @@ router.put("/:id/items/newitem", async (req, res) => {
     });
   });
 });
+
 
 
 

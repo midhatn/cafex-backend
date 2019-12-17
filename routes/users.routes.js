@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../models/User");
+const Order = require("../models/Order")
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 require("dotenv/config");
@@ -90,6 +91,36 @@ router.get("/profile/:id", (req, res) => {
     })
     .catch(err => res.send(err));
 });
+
+//add an order inside the user
+router.put("/:id/orders/neworder", async (req, res) => {
+   User.findById(req.params.id).then(user => {
+    let order =  new Order(req.body);
+
+   user.orders.push(order._id);
+   console.log("hhhx")
+
+    order.save();
+   order.populate("orders")
+    console.log("hhh")
+
+    user.save().then(check => {
+      res.send({ user, order, check });
+    });
+  });
+});
+
+//get all orders inside a chosen user
+router.get("/:id/orders/", async (req, res) => {
+  try {
+    let chosenUser = await User.findById(req.params.id).populate("orders");
+    console.log(chosenUser)
+    res.json(chosenUser.orders);
+  } catch (error) {
+    res.json({ msg: error});
+  }
+});
+
 
 //edit user
 router.put("/profile/:id", (req, res) => {

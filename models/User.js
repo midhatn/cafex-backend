@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+require("dotenv/config");
 
 const userSchema = new Schema(
   {
@@ -44,7 +45,6 @@ const userSchema = new Schema(
     },
     phone: {
       type: String,
-      unique: true
     },
     password: {
       type: String,
@@ -53,6 +53,7 @@ const userSchema = new Schema(
     role: {
       type: String,
       enum: ["admin", "user", "owner"],
+      default: "user",
       required: true
     },
     stores: [
