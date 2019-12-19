@@ -23,7 +23,7 @@ Using MongoDB to Connect full functioning CRUD Server to Frontend of Cafex websi
 
 ### Wireframes for ERD
 
-![ERD](../ga-pro4-cafex-backend/erd.png)
+![ERD](https://raw.githubusercontent.com/midhatn/ga-pro4-cafex-backend/master/erd.png)
 
 
 
